@@ -88,5 +88,8 @@ export const getUserByNickname = async (nickname: string) => {
   if (!user) throw new Error('UserNotFound');
   
   // 비밀번호 제외한 사용자 정보 반환
-  return user.map(({ password, ...rest }) => rest);
+  return user.map((u: any) => {
+    const { password, ...rest } = u;
+    return rest;  
+  });
 };

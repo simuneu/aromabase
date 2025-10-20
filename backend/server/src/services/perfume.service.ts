@@ -208,6 +208,7 @@ export const getpublicPerfumesService = async () => {
   return await prisma.perfumeInfo.findMany({
     where: {
       isPublic: 'Y',
+      perfumeStatus: 'Y',
     },
     include: {
       images: true,

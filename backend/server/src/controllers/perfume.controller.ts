@@ -220,12 +220,13 @@ export const getSearchPerfume = async (req: Request, res: Response) => {
 
 
 export const getPublicPerfumes = async (req: Request, res: Response) => {
-  try {
-    const publicPerfumes = await perfumeService.getpublicPerfumesService();
-    res.json({ data: publicPerfumes });
-  } catch (error: any) {
-    res.status(401).json({ errorMessage: error.message });
-  }
+  try {
+    const publicPerfumes = await perfumeService.getpublicPerfumesService();
+    res.json({ data: publicPerfumes });
+  } catch (error: any) {
+    console.error('getPublicPerfumes Error:', error);
+    res.status(500).json({ errorMessage: '전체 공개 향수를 불러오는 중 서버 오류가 발생했습니다.' });
+  }
 };
 
 
