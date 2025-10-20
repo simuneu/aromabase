@@ -207,43 +207,41 @@ const UserPerfumeListPage: React.FC = () => {
   };
 
   return (
-    <Layout>
-      <div className="p-4 pt-[74px]">
-      
-        {user ? (
-          <UserProfileSection
-            profileImageUrl={user.profileImg || 'https://placehold.co/300x300?text=No+Image'}
-            nickname={user.nickname}
-            email={user.email}
-            isCurrentUser={isCurrentUser}
-            isFollowing={isFollowing}
-            isFollowActionLoading={isFollowActionLoading}
-            onFollow={() => handleFollowToggle(false)}
-            onUnfollow={() => handleFollowToggle(true)}
-          />
-        ) : (
-          <div className="text-center">유저 정보를 불러오는 중...</div>
-        )}
+    <div className="p-4 pt-[74px]">
+    
+      {user ? (
+        <UserProfileSection
+          profileImageUrl={user.profileImg || 'https://placehold.co/300x300?text=No+Image'}
+          nickname={user.nickname}
+          email={user.email}
+          isCurrentUser={isCurrentUser}
+          isFollowing={isFollowing}
+          isFollowActionLoading={isFollowActionLoading}
+          onFollow={() => handleFollowToggle(false)}
+          onUnfollow={() => handleFollowToggle(true)}
+        />
+      ) : (
+        <div className="text-center">유저 정보를 불러오는 중...</div>
+      )}
 
-        {showAlert && (
-          <div className="mt-4">
-              <Alert message={alertMessage} type={alertType} />
-          </div>
-        )}
+      {showAlert && (
+        <div className="mt-4">
+            <Alert message={alertMessage} type={alertType} />
+        </div>
+      )}
 
-        {loading ? (
-          <div className="text-center mt-10">로딩 중...</div>
-        ) : (
-          <PerfumeListSection
-            perfumes={perfumes}
-            currentPage={currentPage}
-            totalPage={totalPage}
-            onPageChange={setCurrentPage}
-            onPerfumeClick={handlePerfumeClick}
-          />
-        )}
-      </div>
-    </Layout>
+      {loading ? (
+        <div className="text-center mt-10">로딩 중...</div>
+      ) : (
+        <PerfumeListSection
+          perfumes={perfumes}
+          currentPage={currentPage}
+          totalPage={totalPage}
+          onPageChange={setCurrentPage}
+          onPerfumeClick={handlePerfumeClick}
+        />
+      )}
+    </div>
   );
 };
 

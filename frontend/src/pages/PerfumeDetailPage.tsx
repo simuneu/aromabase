@@ -162,18 +162,16 @@ const PerfumeDetailPage: React.FC = () => {
     const isLoggedIn = !!sessionStorage.getItem("token");
 
     return (
-        <Layout>
-            <div>
-                <PerfumeDetailSection 
-                    perfume={perfume} 
-                    isLoggedIn={isLoggedIn} 
-                    onDelete={handleDeleteSuccess}
-                    author={author}
-                    handleAuthorClick={handleAuthorClick}
-                    currentUserId={currentUserId}/>
-                   
-            </div>
-        </Layout>
+        <div>
+            <PerfumeDetailSection 
+                perfume={perfume} 
+                isLoggedIn={isLoggedIn} 
+                onDelete={handleDeleteSuccess}
+                author={author}
+                handleAuthorClick={handleAuthorClick}
+                currentUserId={currentUserId}/>
+                
+        </div>
     );
 };
 

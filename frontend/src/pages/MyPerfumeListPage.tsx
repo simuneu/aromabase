@@ -152,39 +152,37 @@ const MyPerfumeListPage: React.FC = () => {
   };
 
   return (
-    <Layout>
-      <div>
-        {user ? (
-          <UserProfileSection
-            profileImageUrl={user.profileImg}
-            nickname={user.nickname}
-            email={user.email}
-            alt={user.nickname}
-            isCurrentUser={true}
-            onEditProfile={handleEditProfileClick}
-          />
-        ) : (
-          <div className="text-center mt-10">사용자 정보를 불러오는 중...</div>
-        )}
+    <div>
+      {user ? (
+        <UserProfileSection
+          profileImageUrl={user.profileImg}
+          nickname={user.nickname}
+          email={user.email}
+          alt={user.nickname}
+          isCurrentUser={true}
+          onEditProfile={handleEditProfileClick}
+        />
+      ) : (
+        <div className="text-center mt-10">사용자 정보를 불러오는 중...</div>
+      )}
 
-        {loading ? (
-          <div className="text-center mt-10">로딩 중...</div>
-        ) : error ? (
-          <div className="text-center mt-10 text-red-500">{error}</div>
-        ) : perfumes.length === 0 ? (
-          <div className="text-center mt-10">등록된 향수가 없습니다.</div>
-        ) : (
-          <PerfumeListSection
-            // title="내가 등록한 향수"
-            perfumes={perfumes}
-            currentPage={currentPage}
-            totalPage={totalPage}
-            onPageChange={handlePageChange}
-            onPerfumeClick={handlePerfumeClick}
-          />
-        )}
-      </div>
-    </Layout>
+      {loading ? (
+        <div className="text-center mt-10">로딩 중...</div>
+      ) : error ? (
+        <div className="text-center mt-10 text-red-500">{error}</div>
+      ) : perfumes.length === 0 ? (
+        <div className="text-center mt-10">등록된 향수가 없습니다.</div>
+      ) : (
+        <PerfumeListSection
+          // title="내가 등록한 향수"
+          perfumes={perfumes}
+          currentPage={currentPage}
+          totalPage={totalPage}
+          onPageChange={handlePageChange}
+          onPerfumeClick={handlePerfumeClick}
+        />
+      )}
+    </div>
   );
 };
 

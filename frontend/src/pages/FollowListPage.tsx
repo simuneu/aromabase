@@ -145,7 +145,6 @@ const FollowListPage: React.FC = () => {
     const totalPage = Math.ceil(filteredUsers.length / pageSize);
 
     return (
-        <Layout>
         <div className="mt-10">
             <div className="flex justify-center mb-6">
                 <div className="w-full max-w-[280px]">
@@ -192,7 +191,6 @@ const FollowListPage: React.FC = () => {
             />
         )}
         </div>
-        </Layout>
     );
 };
 

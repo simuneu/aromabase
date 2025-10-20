@@ -6,13 +6,11 @@ import { useNavigate } from "react-router-dom";
 const PostPerfumePage:React.FC=()=>{
   const navigate = useNavigate();
   return (
-    <Layout>
-      <PostForm
-        onCancel={()=>{
-          navigate(-1)
-        }}
-      />
-    </Layout>
+    <PostForm
+      onCancel={()=>{
+        navigate(-1)
+      }}
+    />
   )
 }
 

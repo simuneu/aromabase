@@ -3,9 +3,7 @@ import Layout from "@/components/Layout";
 
 const UserInfoUpdatePage:React.FC=()=>{
   return (
-    <Layout>
-      <EditProfileForm/>
-    </Layout>
+    <EditProfileForm/>
   )
 }
 

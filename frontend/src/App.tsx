@@ -37,28 +37,30 @@ function AppContent() {
         navigate={handleNavigate}
       />
         <ScrollTop/>
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/signup" element={<SignUpPage />} />
-          
-          <Route path="/mypage/info-update" element={<UserInfoUpdatePage />} />
-          <Route path="/mypage/perfumes" element={<MyPerfumeListPage />} />
-          
-          <Route path="/perfume/create" element={<PostPerfumePage />} />
-          <Route path="/perfume/edit/:id" element={<PostPerfumePage />} />
-          
-          <Route path="/perfumes" element={<PerfumeListPage />} />
-          <Route path="/follow" element={<FollowListPage />} />
-          <Route path="/perfumes/:id" element={<PerfumeDetailPage />} />
+        <Layout>
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignUpPage />} />
+            
+            <Route path="/mypage/info-update" element={<UserInfoUpdatePage />} />
+            <Route path="/mypage/perfumes" element={<MyPerfumeListPage />} />
+            
+            <Route path="/perfume/create" element={<PostPerfumePage />} />
+            <Route path="/perfume/edit/:id" element={<PostPerfumePage />} />
+            
+            <Route path="/perfumes" element={<PerfumeListPage />} />
+            <Route path="/follow" element={<FollowListPage />} />
+            <Route path="/perfumes/:id" element={<PerfumeDetailPage />} />
 
-          <Route path="/user/:nickname" element={<UserPerfumeListPage />} />
-          <Route path="/faq" element={<Faq />} />
-          
-          <Route path="/search" element={<SearchResultsPage />} />
-          
-          <Route path="/search/user" element={<UserSearchResultsPage />} />
-        </Routes>
+            <Route path="/user/:nickname" element={<UserPerfumeListPage />} />
+            <Route path="/faq" element={<Faq />} />
+            
+            <Route path="/search" element={<SearchResultsPage />} />
+            
+            <Route path="/search/user" element={<UserSearchResultsPage />} />
+          </Routes>
+        </Layout>
       <Footer className="mt-auto" />
     </div>
   );

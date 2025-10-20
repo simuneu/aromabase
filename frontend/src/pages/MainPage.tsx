@@ -77,7 +77,7 @@ const MainPage: React.FC = () => {
   }
 
   return (
-    <Layout>
+    // <Layout>
     <div className="mt-35">
       {/* <Carousel/> */}
       <MainInfo />
@@ -130,7 +130,7 @@ const MainPage: React.FC = () => {
       </div>
       <div className="mt-80"/>
     </div>
-    </Layout>
+    // </Layout>
   );
 };
 
